@@ -1,16 +1,18 @@
-var fs = require('fs')
-var path = require('path')
-var Handlebars = require('handlebars')
-var moment = require('moment')
-var pluralize = require('pluralize')
+// noinspection JSUnusedGlobalSymbols
+
+const fs = require('fs');
+const path = require('path');
+const Handlebars = require('handlebars');
+const moment = require('moment');
+const pluralize = require('pluralize');
 
 function render (resume) {
-  var css = fs.readFileSync(path.join(__dirname, '/style.css'), 'utf-8')
-  var tpl = fs.readFileSync(path.join(__dirname, '/resume.hbs'), 'utf-8')
-  var partialsDir = path.join(__dirname, 'partials')
-  var filenames = fs.readdirSync(partialsDir)
+	const css = fs.readFileSync(path.join(__dirname, '/style.css'), 'utf-8');
+	const tpl = fs.readFileSync(path.join(__dirname, '/resume.hbs'), 'utf-8');
+	const partialsDir = path.join(__dirname, 'partials');
+	const filenames = fs.readdirSync(partialsDir);
 
-  Handlebars.registerHelper({
+	Handlebars.registerHelper({
     formatDate: function (date) {
       if (typeof date === 'undefined') {
         return 'now'
@@ -61,15 +63,15 @@ function render (resume) {
   })
 
   filenames.forEach(function (filename) {
-    var matches = /^([^.]+).hbs$/.exec(filename)
-    if (!matches) {
+	  const matches = /^([^.]+).hbs$/.exec(filename);
+	  if (!matches) {
       return
     }
-    var name = matches[1]
-    var filepath = path.join(partialsDir, filename)
-    var template = fs.readFileSync(filepath, 'utf8')
+	  const name = matches[1];
+	  const filepath = path.join(partialsDir, filename);
+	  const template = fs.readFileSync(filepath, 'utf8');
 
-    Handlebars.registerPartial(name, template)
+	  Handlebars.registerPartial(name, template)
   })
   return Handlebars.compile(tpl)({
     css: css,

@@ -1,9 +1,9 @@
-# Papirus theme [![](https://badge.fury.io/js/jsonresume-theme-papirus.svg)](https://www.npmjs.org/package/jsonresume-theme-papirus)
+# zenith theme [![](https://badge.fury.io/js/jsonresume-theme-zenith.svg)](https://www.npmjs.org/package/jsonresume-theme-zenith)
 
-This is the papirus theme for [JSON Resume](http://jsonresume.org/).
+This is the zenith theme for [JSON Resume](http://jsonresume.org/).
 
 
-![Preview of papirus theme](https://raw.githubusercontent.com/konalexiou/jsonresume-theme-papirus/master/papirus.png)
+![Preview of zenith theme](https://raw.githubusercontent.com/konalexiou/jsonresume-theme-zenith/master/zenith.png)
 
 ## Getting started
 
@@ -37,7 +37,7 @@ sudo npm install -g resume-cli
 
 Install the theme by typing
 ```bash
-npm install -g jsonresume-theme-papirus
+npm install -g jsonresume-theme-zenith
 ```
 
 ### Work on your resume
@@ -50,7 +50,7 @@ http://registry.jsonresume.org/
 If you want to publish your resume, first copy your resume.json and then run:
 
 ```bash
-resume publish --theme=papirus
+resume publish --theme=zenith
 ```
 
 ### Export json resume in PDF
@@ -58,7 +58,7 @@ resume publish --theme=papirus
 If you want to publish your resume, first copy your resume.json and then run:
 
 ```bash
-resume export resume.pdf --theme=papirus
+resume export resume.pdf --theme=zenith
 ```
 
 ## License
